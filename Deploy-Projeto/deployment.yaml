@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: projeto-automation
+  namespace: projeto-vr
+  labels:
+    app: projeto-automation
+spec:
+  selector:
+    matchLabels:
+      app: projeto-automation
+  replicas: 1
+  template:
+    metadata:
+      annotations:
+      labels:
+        app: projeto-automation
+    spec:
+      containers:
+      - name: projeto-automation
+        resources:
+          limits:
+            memory: 1024Mi
+            cpu: 300m
+          requests:
+            memory: 512Mi
+            cpu: 100m
+        imagePullPolicy: Always
+        image: gcr.io/civic-replica-408912/toolkit:v02
+        ports:
+        - containerPort: 80
