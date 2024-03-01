@@ -1,6 +1,6 @@
 kind: Namespace
 apiVersion: v1
 metadata:
-  name: projeto-vr
+  name: <name>
   labels:
-    name: projeto-vr
+    name: <name>
